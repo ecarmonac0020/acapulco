@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en"
+	ng-app="app" 
+	ng-controller="ApprovedAppCtrl">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>Web Store Integration Example</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="bootstrap.min.css" rel="stylesheet">
+
+	</head>
+
+	<body class="bg-light">
+
+	<div class="container">
+		<div class="py-5 text-center">
+			
+			<img class="d-block mx-auto"
+				src="check.png"
+				alt="" height="72">
+		</div>
+		
+		<div class="row">
+		
+			<div class="col-12 order-md-1">
+				<h4 class="text-center align-items-center mb-3">
+					<span class="text-muted">
+						Transacción Exitosa
+					</span> 
+				</h4>
+				
+				<ul class="list-group mb-3">
+					<li
+						class="list-group-item d-flex justify-content-between lh-condensed">
+						<div>
+							<h6 class="my-0">
+								Importe
+							</h6>
+							<small class="text-muted">
+								TrxAmount
+							</small>
+						</div> 
+						<span class="text-muted">$ {{t.TrxAmount | number : 2}} {{t.TrxCurrency}}</span>
+					</li>
+					<li
+						class="list-group-item d-flex justify-content-between lh-condensed">
+						<div>
+							<h6 class="my-0">
+								Adicional (Propina)
+							</h6>
+							<small class="text-muted">
+								TrxAAmount
+							</small>
+						</div> 
+						<span class="text-muted">$ {{(t.TrxAAmount ? t.TrxAAmount : 0) | number : 2}} {{t.TrxCurrency}}</span>
+					</li>
+					<li class="list-group-item d-flex justify-content-between lh-condensed">
+						<div>
+							<h6 class="my-0">
+								Autorización
+							</h6>
+							<small class="text-muted">
+								TrxAuth
+							</small>
+						</div> 
+						<span class="text-muted text-right">{{t.TrxAuth}}</span>
+					</li>
+					<li
+						class="list-group-item d-flex justify-content-between lh-condensed">
+						<div>
+							<h6 class="my-0">Folio</h6>
+							<small class="text-muted">
+								TrxOriginalNumber
+							</small>
+						</div> 
+						<span class="text-muted">{{t.TrxOriginalNumber}}</span>
+					</li>
+					<li
+						class="list-group-item d-flex justify-content-between lh-condensed">
+						<div>
+							<h6 class="my-0">Referencia</h6>
+							<small class="text-muted">
+								TrxReference
+							</small>
+						</div> 
+						<span class="text-muted">{{t.TrxReference}}</span>
+					</li>
+					<li
+						class="list-group-item d-flex justify-content-between lh-condensed">
+						<div>
+							<h6 class="my-0">Habitación</h6>
+							<small class="text-muted">
+								TrxRoomNbr
+							</small>
+						</div> 
+						<span class="text-muted">{{t.TrxRoomNbr}}</span>
+					</li>
+					<li
+						class="list-group-item d-flex justify-content-between lh-condensed">
+						<div>
+							<h6 class="my-0">Fecha</h6>
+							<small class="text-muted">
+								TrxDate
+							</small>
+						</div> 
+						<span class="text-muted">{{t.TrxDate}}</span>
+					</li>
+					<li
+						class="list-group-item d-flex justify-content-between lh-condensed">
+						<div>
+							<h6 class="my-0">Hora</h6>
+							<small class="text-muted">
+								TrxTime
+							</small>
+						</div> 
+						<span class="text-muted">{{t.TrxTime}}</span>
+					</li>
+					<li
+						class="list-group-item d-flex justify-content-between lh-condensed">
+						<div>
+							<h6 class="my-0">Afiliación</h6>
+							<small class="text-muted">
+								TrxMerchant
+							</small>
+						</div> 
+						<span class="text-muted text-right">{{t.TrxMerchant}}</span>
+					</li>
+					<li
+						class="list-group-item d-flex justify-content-between lh-condensed">
+						<div>
+							<h6 class="my-0">Forma de Pago</h6>
+							<small class="text-muted">
+								TrxPaymentMode
+							</small>
+						</div> 
+						<span class="text-muted text-right">{{t.TrxPaymentMode}}</span>
+					</li>
+					<li
+						class="list-group-item d-flex justify-content-between lh-condensed">
+						<div>
+							<h6 class="my-0">Tarjeta</h6>
+							<small class="text-muted">
+								TrxCard
+							</small>
+						</div> 
+						<span class="text-muted">{{t.TrxCard}}</span>
+					</li>
+					<li
+						class="list-group-item d-flex justify-content-between lh-condensed">
+						<div>
+							<h6 class="my-0">Banco Tarjeta</h6>
+							<small class="text-muted">
+								TrxCardBank
+							</small>
+						</div> 
+						<span class="text-muted text-right">{{t.TrxCardBank}}</span>
+					</li>
+					<li
+						class="list-group-item d-flex justify-content-between lh-condensed">
+						<div>
+							<h6 class="my-0">Marca Tarjeta</h6>
+							<small class="text-muted">
+								TrxCardBrand
+							</small>
+						</div> 
+						<span class="text-muted">{{t.TrxCardBrand}}</span>
+					</li>
+					<li
+						class="list-group-item d-flex justify-content-between lh-condensed">
+						<div>
+							<h6 class="my-0">Tipo Tarjeta</h6>
+							<small class="text-muted">
+								TrxCardInstrument
+							</small>
+						</div> 
+						<span class="text-muted">{{t.TrxCardInstrument}}</span>
+					</li>
+					<li
+						class="list-group-item d-flex justify-content-between lh-condensed">
+						<div>
+							<h6 class="my-0">AID</h6>
+							<small class="text-muted">
+								TrxAID
+							</small>
+						</div> 
+						<span class="text-muted">{{t.TrxAID}}</span>
+					</li>
+					<li
+						class="list-group-item d-flex justify-content-between lh-condensed">
+						<div>
+							<h6 class="my-0">ARQC</h6>
+							<small class="text-muted">
+								TrxArqc
+							</small>
+						</div> 
+						<span class="text-muted">{{t.TrxArqc}}</span>
+					</li>
+					<li
+						class="list-group-item d-flex justify-content-between lh-condensed">
+						<div>
+							<h6 class="my-0">No. Serie Terminal</h6>
+							<small class="text-muted">
+								TrxDevice
+							</small>
+						</div> 
+						<span class="text-muted">{{t.TrxDevice}}</span>
+					</li>
+					
+				</ul>
+				
+			</div>
+		</div>	
+
+		<div class="row">
+		
+			<div class="col-12 order-md-2">
+				<hr class="mb-4">
+				<button class="btn btn-primary btn-lg btn-block mb-4" type="button"
+					ng-click="goHome()">
+					Seguir comprando
+				</button>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	
+	<script src="angular.min.js" type="text/javascript"></script>
+	<script src="jquery.min.js"></script>
+	
+	<!-- Page Script -->
+	<script src="app.js"></script>
+	<script src="approved.controller.js"></script>
+	
+	</body>
+</html>
